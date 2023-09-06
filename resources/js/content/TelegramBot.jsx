@@ -18,7 +18,9 @@ export default function Home(){
         <div class="form-submit">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Token</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="token" />
+                <input type="token" class="form-control" id="token" placeholder="token" />
+                <input type="message" class="form-control" id="message" placeholder="message" />
+                
                 <button type="button" class="btn btn-light" onClick={sendRequest}>Send message</button>
             </div>
 
