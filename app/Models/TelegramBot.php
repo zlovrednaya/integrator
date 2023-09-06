@@ -1,8 +1,10 @@
-<?php
+hat<?php
+
+namespace App\Models;
 //integrator_talk
 class TelegramBot extends Integrator{
     public $api_key = '6191341752:AAFokKPO4EX6tLZKqW9x521B0VqQ2XBbpm8';
-    public $url = "https://api.telegram.org/bot{{api_key}}";
+    public $url = "https://api.telegram.org/bot";
     public $path;
 
     public function getUrl($action){
@@ -11,9 +13,12 @@ class TelegramBot extends Integrator{
             case 'updates':
                 $url2 = 'getUpdates';
                 break;
+            case 'send':
+                $url2 = 'sendMessage';
+                break;
         }
 
-        return  $this->url . '/' . $url2;
+        return  $this->url.$this->api_key . '/' . $url2;
     }
    public function getLastMessage(){
         $updatesArr=$this->request('updates');
@@ -25,8 +30,19 @@ class TelegramBot extends Integrator{
             case 'updates':
                 $data=[];
                 break;
+            case 'send':
+                $data=[];
+                break; 
         }
         return $data;
+   }
+
+   public function sendMessage(){
+
+   }
+
+   public function revealChatId(){
+
    }
    
     public function request($action){
@@ -40,7 +56,7 @@ class TelegramBot extends Integrator{
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $output = curl_exec($ch);
         curl_close($ch);
-
+echo print_r([$path,$output] );
         return $output;
 
     }
