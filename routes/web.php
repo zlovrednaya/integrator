@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\IntegratorController;
+use App\Http\Controllers\DemoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,4 +19,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/telegramBot', [IntegratorController::class,'sendRequest']);
+Route::post('/telegramBot/testConnection', [DemoController::class,'sendRequest']);

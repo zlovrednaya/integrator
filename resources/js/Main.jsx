@@ -18,11 +18,9 @@ class Main extends Component {
                     <div className="header-common">
                         <h1 className="logo">Integrator</h1>
                         <ul className="header">
-                            <li><Link to="/">Empower your business</Link></li>
-                            <li><Link to="/guige">Your guide</Link></li>
-                            <li><Link to="/contact">Contact us</Link></li>
-                            <li><Link to="/about">About SPY</Link></li>
-                            
+                            <li><Link to="/">telegramBot</Link></li>
+                            <li><Link to="/spotify">spotifyBot</Link></li>
+                           <li><Link to="/chat">chatBot</Link></li>
                         
                         </ul>
                        
